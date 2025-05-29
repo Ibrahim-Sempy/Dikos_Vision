@@ -41,21 +41,21 @@ Ce projet utilise une architecture monorepo avec les applications suivantes :
 - pnpm 8+
 
 ### Installation des dépendances
-\`\`\`bash
+```bash
 # Cloner le repository
 git clone <repository-url>
 cd diko-restaurant
 
 # Installer les dépendances
 pnpm install
-\`\`\`
+```
 
 ### Configuration des variables d'environnement
 
 Créer les fichiers `.env` nécessaires :
 
 #### `apps/api/.env`
-\`\`\`env
+```env
 # Base de données
 SUPABASE_URL=your_supabase_url
 SUPABASE_ANON_KEY=your_supabase_anon_key
@@ -84,28 +84,28 @@ NODE_ENV=development
 PORT=3001
 CLIENT_URL=http://localhost:5173
 ADMIN_URL=http://localhost:5174
-\`\`\`
+```
 
 #### `apps/client/.env`
-\`\`\`env
+```env
 VITE_API_URL=http://localhost:3001/api
 VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
-\`\`\`
+```
 
 #### `apps/admin/.env`
-\`\`\`env
+```env
 VITE_API_URL=http://localhost:3001/api
-\`\`\`
+```
 
 ## 🛠️ Développement
 
 ### Démarrer tous les services
-\`\`\`bash
+```bash
 pnpm dev
-\`\`\`
+```
 
 ### Démarrer des services spécifiques
-\`\`\`bash
+```bash
 # Client uniquement
 pnpm client:dev
 
@@ -114,38 +114,38 @@ pnpm admin:dev
 
 # API uniquement
 pnpm api:dev
-\`\`\`
+```
 
 ### Build
-\`\`\`bash
+```bash
 # Build toutes les applications
 pnpm build
 
 # Build une application spécifique
 pnpm build --filter=client
-\`\`\`
+```
 
 ### Tests
-\`\`\`bash
+```bash
 # Lancer tous les tests
 pnpm test
 
 # Tests en mode watch
 pnpm test:watch
-\`\`\`
+```
 
 ### Linting
-\`\`\`bash
+```bash
 # Linter tout le code
 pnpm lint
 
 # Formater le code
 pnpm format
-\`\`\`
+```
 
 ## 📁 Structure du Projet
 
-\`\`\`
+```
 diko-restaurant/
 ├── apps/
 │   ├── client/          # App client React
@@ -161,7 +161,7 @@ diko-restaurant/
 ├── scripts/             # Scripts d'automatisation
 ├── tests/               # Tests E2E globaux
 └── docs/                # Documentation
-\`\`\`
+```
 
 ## 🌟 Fonctionnalités
 
@@ -199,16 +199,16 @@ diko-restaurant/
 ## 🚀 Déploiement
 
 ### Frontend (Netlify)
-\`\`\`bash
+```bash
 # Build et déploiement automatique via Git
 pnpm build --filter=client
-\`\`\`
+```
 
 ### Backend (Render/Railway)
-\`\`\`bash
+```bash
 # Build et déploiement
 pnpm build --filter=api
-\`\`\`
+```
 
 ### Variables d'environnement de production
 Configurer les mêmes variables que pour le développement avec les valeurs de production.
